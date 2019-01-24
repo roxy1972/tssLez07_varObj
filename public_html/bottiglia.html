@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Bottiglia</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/bottiglia.js"></script>
+    </head>
+    <body>
+        <div id="div_stato">Gioco della bottiglia</div><br/>
+        <input id="marca" placeholder="ins.marca">
+        <input id="capacita" placeholder="ins.capacità">
+        <input type="button" value="CREA BOTTIGLIA" onclick="creaBottiglia()"><br/><br/>
+        <div id=div_ris>nessuna bottiglia!!</div><br/><br/><br/>
+        
+        <hr><br/><br/>
+        
+        <input id="in_bevo" onchange="refresh()" type="range" step="10" min="0" max="200" value="0"><span id="sp_bevo">  </span><br/><br/>
+        <input type="button" value="BEVO" onclick="bevoBottiglia()"><br/><br/>
+        <div id=div_bevo></div><br/><br/><br/>
+        
+        <hr><br/><br/>
+        
+        <input id="in_ricarico" onchange="refresh()" type="range" step="10" min="0" max="200" value="0"><span id="sp_ricarico">  </span><br/><br/>
+        <input type="button" value="CARICO" onclick="caricoBottiglia()"><br/><br/>
+        <div id=div_ricarico></div><br/><br/><br/>
+
+
+    </body>
+</html>
+
