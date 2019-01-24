@@ -27,7 +27,8 @@ function Bottiglia(marca, capacita, qta_corrente) {
         ris = "sono una bottiglia " + this.marca + " con capacità iniziale di " + this.capacita
                 + " ml e ora mi rimangono " + this.qta_corrente + " ml!";
         return ris;
-    }
+    };
+    
     this.ricarico =function (quanto){
         let ris=0;
         if(this.qta_corrente+quanto*1<= this.capacita){
@@ -57,6 +58,14 @@ function refresh(){
     sp_bevo.innerHTML=in_bevo.value;
     sp_ricarico.innerHTML=in_ricarico.value;    
 }
+function disBottiglia(){
+    //mi serve la quantità corrente
+    let qta=bot.qta_corrente;
+    let heightMax=document.getElementById("dbox").clientHeight;
+    let cap=bot.capacita;
+    let newH=heightMax*qta/cap;
+    document.getElementById("dbot").style.height=newH+"px";
+}
         
 function creaBottiglia(){
     let marca = document.getElementById("marca").value;
@@ -64,7 +73,8 @@ function creaBottiglia(){
     bot = new Bottiglia(marca,capacita,capacita);
     dris = document.getElementById("div_ris");
     let prn=bot.stato();
-    dris.innerHTML=prn;    
+    dris.innerHTML=prn;  
+    disBottiglia();
 }
 
 function bevoBottiglia(){
@@ -74,7 +84,7 @@ function bevoBottiglia(){
     prn+= "<br>" + bot.stato();
     ris=document.getElementById("div_bev");    
     dris.innerHTML=prn;
-    
+    disBottiglia();
 }
 function caricoBottiglia(){
     let ricaricoQta= in_ricarico.value*1;
@@ -82,7 +92,7 @@ function caricoBottiglia(){
     prn+= "<br>" + bot.stato();
     ris=document.getElementById("div_ricarico");    
     dris.innerHTML=prn;
-    
+    disBottiglia();
 }
 
 
